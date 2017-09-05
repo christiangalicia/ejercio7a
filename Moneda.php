@@ -25,7 +25,11 @@ class Moneda {
      * @return void
      */
     public function mostrarValor(){
-        echo $this->valor;
+        echo "<b>". $this->valor ."</b>";
+    }
+    
+    public function actualizarValor($valor){
+        $this->valor=$valor;
     }
     
 }
