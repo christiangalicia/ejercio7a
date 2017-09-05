@@ -28,7 +28,7 @@ class Moneda {
         echo "<b>". $this->valor ."</b>";
     }
     
-    public function actualizarValor($valor){
+    public function actualizarValorMoneda($valor){
         $this->valor=$valor;
     }
     
