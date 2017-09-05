@@ -28,4 +28,13 @@ class Moneda {
         echo $this->valor;
     }
     
+    /**
+     * metodo que me permie cambiar el valor
+     * @param String $valor <p>
+     * valor para iniciar la moneda
+     * @return void
+     */
+    public function cambiarValor($valor){
+        $this->valor= $valor;
+    }
 }
