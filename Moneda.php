@@ -9,7 +9,7 @@
 class Moneda {
     //put your code here
     private $valor;
-    
+
     /**
      * COntructor recibe un valor para iniciar la moneda
      * @param String $valor <p>
@@ -19,7 +19,7 @@ class Moneda {
     public function __construct($valor) {
         $this->valor = $valor;
     }
-    
+
     /**
      * metodo que me imprime el valor de la moneda
      * @return void
@@ -27,9 +27,16 @@ class Moneda {
     public function mostrarValor(){
         echo "<b>". $this->valor ."</b>";
     }
-    
+
     public function actualizarValorMoneda($valor){
         $this->valor=$valor;
     }
-    
+
+		/**
+		 * Marcos Frias
+		 */
+		class Marcos{
+			
+		}
+
 }
