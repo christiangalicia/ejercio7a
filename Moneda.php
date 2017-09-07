@@ -32,11 +32,6 @@ class Moneda {
         $this->valor=$valor;
     }
 
-		/**
-		 * Marcos Frias
-		 */
-		class Marcos{
-			
-		}
+	
 
 }
