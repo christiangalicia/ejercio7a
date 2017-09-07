@@ -9,8 +9,11 @@ include_once './Moneda.php';
     <body>
         <?php
         
-        $moneda = new Moneda("$10.00");
+        $moneda = new Moneda("$20.00");
         $moneda->mostrarValor();
+        ?>
+        <?php
+        echo "hola";
         ?>
     </body>
 </html>
