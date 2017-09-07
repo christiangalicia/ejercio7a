@@ -12,5 +12,8 @@ include_once './Moneda.php';
         $moneda = new Moneda("$10.00");
         $moneda->mostrarValor();
         ?>
+        <?php
+        echo "hola";
+        ?>
     </body>
 </html>
