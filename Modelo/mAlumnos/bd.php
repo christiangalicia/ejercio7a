@@ -28,7 +28,7 @@ class BD {
         $this->conn = NULL;
     }
 
-
+//$this->bd->ConsultaPreparada("SELECT * FROM tabla WHERE correo=? AND password=? AND tipousuario=?", array($correo, $password, $tipo));
     function ConsultaPreparada($sql, $parametros) {
         if ($this->conn == NULL)
             $this->open();
@@ -44,7 +44,7 @@ class BD {
     }
 
  
-
+//this->bd->InsertarRegistrosPreparada("INSERT INTO tabla (id,campo2) VALUES (?,?)", array($ide, $camp)))
     public function InsertarRegistrosPreparada($sql, $parametros) {
         if ($this->conn == NULL)
             $this->open();
@@ -59,7 +59,7 @@ class BD {
     }
 
 
-
+//$this->bd->ModificarRegistrosPreparada("UPDATE tabla SET titulo = ? WHERE id = ? AND estatus <> ?", array($nombre, $id, 2)))
     public function ModificarRegistrosPreparada($sql, $parametros) {
         if ($this->conn == NULL)
             $this->open();
