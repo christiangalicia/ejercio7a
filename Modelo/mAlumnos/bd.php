@@ -73,8 +73,21 @@ class BD {
                 return FALSE;
         }
     }
+   
+     public function EliminarRegistrosPreparada($sql, $parametros) {
+        if ($this->conn == NULL)
+            $this->open();
 
- 
+        $sentencia = $this->conn->prepare($sql);
+        if ($sentencia->execute($parametros)) {
+            return TRUE;
+        } else {
+            if ($this->depuracion)
+            // echo var_dump($sentencia->errorInfo());
+                return FALSE;
+        }
+    }
+   
 
     function ConsultaAsociativaOrdenada($tabla, $filtro, $orden, $parametros) {
         if ($this->conn == NULL)
