@@ -18,11 +18,27 @@ and open the template in the editor.
     
     </head>
     <body>
-        <form method="post" action="agregarAlumno.php">
+        <form id="formulario">
             <input type="hidden" name="insertar" value="1">
             Nombre <input type="text" name="nombre"><br>
             Matricula<input type="text" name="matricula">
-            <input type="submit" value="Agregar alumno">
+            <a id="enviar" href="#">Registrar Alumno</a>
         </form>
+        <div id="mensaje"></div>
+        
+              <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <script>
+  $("#enviar").click(function(){
+
+      $.post( "../../Controlador/cAlumnos/informacionTiempoReal.php",
+      $( "#formulario" ).serialize() )
+        .done(function( data ) {
+       $("#mensaje").html(data);
+  });
+    });
+  </script>
     </body>
 </html>

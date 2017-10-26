@@ -14,17 +14,19 @@
 class mAlumnos extends BD {
    
     public function consultarAlumno($matricula){
-        return $this->ConsultarRegistro("alumnos", "matricula=?", array($matricula));
+       $res=  $this->ConsultaPreparada("select * from alumnos where matricula=?", array($matricula));
+       return $res[0];
     }
     
     public function consultarAlumnos(){
-       return $this->ConsultaAsociativa("alumnos", "estado=?", array(1));
+        return $this->ConsultaPreparada("select * from alumnos where estado=?", array(1));
+    
     }
     public function insertarAlumno($matricula, $nombre){
-$this->InsertarRegistros("alumnos", "matricula,nombre,estado", array(array($matricula,$nombre,1)));
-    }
+       return $this->InsertarRegistrosPreparada("insert into alumnos (matricula, nombre, estado) values(?,?,?)", array($matricula,$nombre,1));
+      }
     public function eliminarAlumno($matricula){
-        $this->EliminarRegistro("alumnos", "matricula=?", array($matricula));
+        $this->ModificarRegistrosPreparada("update alumnos set estado=0 where matricula=?", array($matricula));
     }
     public function editarAlumno($matricula,$nombre){
         

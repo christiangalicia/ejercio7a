@@ -1,5 +1,5 @@
 <?php 
-include_once '../../Modelo/bd.php';
+include_once '../../Modelo/BD.php';
 include_once '../../Modelo/mAlumnos/mAlumnos.php';
 include_once '../../Controlador/cAlumnos/cAlumnos.php';
 $controlador = new cAlumnos();
@@ -17,16 +17,26 @@ and open the template in the editor.
         <link rel="stylesheet" href="../asset/estilo.css">
     </head>
     <body>
-        <table>
-            <tr><td>Matricula</td>
-                <td>Nombre</td>
-                <td>Editar</td>
-                <td>Eliminar</td>
-            </tr>
-            <?php echo $controlador->mostrarAlumnos(); ?>
+        <table id="alumnos">
             
-        </table>
+         </table>
        
-        
+        <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <script>
+      $.ajax({url: "../../Controlador/cAlumnos/informacionTiempoReal.php?datos=alumnos", success: function(result){
+        $("#alumnos").html(result);
+       }});  
+      setInterval(function(){ 
+    $.ajax({url: "../../Controlador/cAlumnos/informacionTiempoReal.php?datos=alumnos", success: function(result){
+        $("#alumnos").html(result);
+    }}); 
+ 
+    
+    
+    }, 1000);       
+ </script>
     </body>
 </html>

@@ -19,11 +19,7 @@ class cAlumnos {
             $m = (int)$_POST["matricula"];
             $this->modelo->eliminarAlumno($m);
             header("location: alumnos.php");
-        }else if(isset ($_POST["insertar"])){
-            $this->modelo->insertarAlumno($_POST["matricula"], $_POST["nombre"]);
-           header("location: alumnos.php");
         }
-        
     }
     public function getAlumno(){
         $alumno = new Alumno();
@@ -44,7 +40,11 @@ class cAlumnos {
     
     public function mostrarAlumnos(){
        $reg= $this->modelo->consultarAlumnos();
-       $acu="";
+       $acu="<tr><td>Matricula</td>
+                <td>Nombre</td>
+                <td>Editar</td>
+                <td>Eliminar</td>
+            </tr>";
        foreach ($reg as $r) {
          $acu .='<tr><td>'.$r["matricula"].'</td>
                 <td>'.$r["nombre"].'</td>
